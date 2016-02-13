@@ -94,6 +94,8 @@ ref.changePassword({
 
 
 router.get('/logout', function(req, res, next) {
+	console.log('Cookie be gone!!')
+	
   res.clearCookie('mytoken').send('Success');
 });
 

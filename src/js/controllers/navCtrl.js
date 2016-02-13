@@ -2,10 +2,12 @@
 
 var app = angular.module('someApp');
 
-app.controller('navCtrl', ['$scope', '$http', function($scope, $http) {
+app.controller('navCtrl', ['$scope', '$http', "$cookies", function($scope, $http, $cookies) {
 
   $scope.logout = function(){
-  console.log('navCtrl');
-  	$http.post('/users/logout')
+  	$cookies.remove('mytoken')
+
+var cookies = $cookies.getAll()
+console.log(cookies)
   }
 }]);
