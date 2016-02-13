@@ -1,25 +1,23 @@
-<h3>Somone To Love</h3>
 <div ng-controller="sexySearchCtrl">
-<form role="form">
-  <div class="form-group">
-    <label for="email">Find a Sexy Named Lover  </label>
-    <input type="text" ng-model="search" class="form-control">
-    <button type="submit" ng-click="sexySearch()" class="btn btn-default">Submit</button>
-  </div>
- </form>
-  <div class="ng-hide" ng-show="showTable">
-    <table class="table" >
-      <thead>
-        <th>Name</th>
-        <th>add to Love Me</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="stock in searchResults">
-<!--           <td>{{stock.Name}}</td>
-          <td>{{stock.Symbol}}</td> -->
-        </tr>
-      </tbody>
-    </table>
-  </div>
- </form>
-</div>
+<h3>Somone To Love</h3>
+
+<label for="email">Find a Sexy Named Lover  </label>
+
+<table class="table">
+     <thead>
+      <th>Email</th>
+       <th>Name</th>
+       <th>Pic</th>
+       <th>Delete</th>
+       <th>Add</th>
+     </thead>
+     <tbody>
+       <tr ng-repeat="user in users.data">
+         <td>{{user.email}}</td>
+         <td>{{user.username}}</td>
+         <td><img src='{{user.image}}'></td>
+         <td> <button class= 'btn btn-succes"s' ng-click="AddName()">Add for Lov'n</button></td>
+         <td> <button class= 'btn btn-danger' ng-click="deleteName()">Delete</button></td>
+       </tr>
+     </tbody>
+   </table>

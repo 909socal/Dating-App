@@ -95,9 +95,27 @@ ref.changePassword({
 
 router.get('/logout', function(req, res, next) {
 	console.log('Cookie be gone!!')
-	
+
   res.clearCookie('mytoken').send('Success');
 });
+
+router.get('/islogged', User.isLoggedIn, function(req, res, next){
+
+	console.log('req.token', req.token)
+	// User.findById({req.token._id}, function(err, user){
+		// console.log('user in find by id', user)
+	res.send(user)
+	// })
+
+})
+router.get('/all',  function(req, res, next){
+console.log("INNNN")
+	User.find({}, function(err, usersAll){
+		console.log('all users', usersAll)
+	res.send(usersAll)
+	})
+
+})
 
 
 module.exports = router;
