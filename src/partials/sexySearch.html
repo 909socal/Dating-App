@@ -1,0 +1,25 @@
+<h3>Somone To Love</h3>
+<div ng-controller="sexySearchCtrl">
+<form role="form">
+  <div class="form-group">
+    <label for="email">Find a Sexy Named Lover  </label>
+    <input type="text" ng-model="search" class="form-control">
+    <button type="submit" ng-click="sexySearch()" class="btn btn-default">Submit</button>
+  </div>
+ </form>
+  <div class="ng-hide" ng-show="showTable">
+    <table class="table" >
+      <thead>
+        <th>Name</th>
+        <th>add to Love Me</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="stock in searchResults">
+<!--           <td>{{stock.Name}}</td>
+          <td>{{stock.Symbol}}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ </form>
+</div>
